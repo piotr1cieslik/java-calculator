@@ -1,8 +1,9 @@
 package modules;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import interfaces.ReadingInterface;
@@ -28,10 +29,17 @@ public class FilesReader implements ReadingInterface {
 	 * method which opens a file (using path from parameter)
 	 * 
 	 * @param filePath
-	 * @throws FileNotFoundException
+	 * @return boolean
 	 */
-	public void openFile(String filePath) throws FileNotFoundException{
-		reader = new BufferedReader(new FileReader(filePath));
+	public boolean openFile(String filePath){
+		try{
+			reader = new BufferedReader(new FileReader(filePath));
+			return true;
+		}
+		catch(FileNotFoundException fnfe){
+			System.out.println("Plik o podanej œcie¿ce nie istnieje!");
+			return false;
+		}
 	}
 	
 	/**

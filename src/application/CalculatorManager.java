@@ -1,6 +1,5 @@
 package application;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import modules.ConsoleReader;
@@ -86,16 +85,15 @@ public class CalculatorManager {
 	 * method to act on results of method checkString
 	 * 
 	 * @param result
-	 * @throws FileNotFoundException
 	 */
-	private void analizeResult(int result) throws FileNotFoundException{
+	private void analizeResult(int result){
 		if (result == 0) 
 			mathEngine.showResult(line);
-		else if (result == 1){ 
-			readFromConsole = false;
+		else if (result == 1){
 			System.out.println("Podaj scie¿kê do pliku:");
 			line = consoleReader.readLine();
-			filesReader.openFile(line);
+			if(filesReader.openFile(line))
+				readFromConsole = false;
 		}
 	}
 }
