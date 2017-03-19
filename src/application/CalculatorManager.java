@@ -74,11 +74,16 @@ public class CalculatorManager {
 	 * @return int
 	 */
 	private int checkString(String line){
-		if(line.equals("plik")) 
+		if (!readFromConsole)
+			return 0;
+		if(line.equals("dzialanie"))
 			return 1;
-		else if(line.equals("koniec")) 
+		else if(line.equals("plik")) 
 			return 2;
-		return 0;
+		else if(line.equals("koniec")) 
+			return 3;
+		//return 4 if wrong command was read
+		return 4;
 	}
 	
 	/**
@@ -89,11 +94,18 @@ public class CalculatorManager {
 	private void analizeResult(int result){
 		if (result == 0) 
 			mathEngine.showResult(line);
-		else if (result == 1){
+		else if (result==1){
+			System.out.println("Wpisz dzia³anie (np. 5+6): ");
+			line = consoleReader.readLine();
+			mathEngine.showResult(line);
+		}
+		else if (result == 2){
 			System.out.println("Podaj scie¿kê do pliku:");
 			line = consoleReader.readLine();
 			if(filesReader.openFile(line))
 				readFromConsole = false;
 		}
+		else if(result == 4)
+			System.out.println("Wpisa³eœ niedozwolone dzia³anie lub polecenie!");
 	}
 }

@@ -37,14 +37,15 @@ public class FilesReader implements ReadingInterface {
 			return true;
 		}
 		catch(FileNotFoundException fnfe){
-			System.out.println("Plik o podanej œcie¿ce nie istnieje!");
+			if(!filePath.equals("koniec"))
+				System.out.println("Plik o podanej œcie¿ce nie istnieje!");
 			return false;
 		}
 	}
 	
 	/**
 	 * reads one line from file and returns it
-	 * in case of end of file, returns "koniec"
+	 * in case of end of file, returns "eof"
 	 * 
 	 * @throws IOException
 	 * @return String

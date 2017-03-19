@@ -18,7 +18,8 @@ public class Main {
 	 */
 	public static void main(String[] args) throws IOException {
 		//show options to user
-		System.out.println("¯eby otrzymaæ wynik, wpisz dzia³anie. ¯eby obliczyæ wyniki z pliku, wpisz 'plik' a nastêpnie œcie¿kê do pliku. "
+		System.out.println("¯eby obliczyæ pojedyncze dzia³anie, wpisz 'dzialanie', a nastêpnie wyra¿enie do obliczenia.\n"
+				+ "¯eby obliczyæ wyniki dzia³añ z pliku, wpisz 'plik' a nastêpnie œcie¿kê do pliku.\n"
 				+ "¯eby zamkn¹æ program, wpisz 'koniec'.");
 		CalculatorManager calculator = new CalculatorManager();
 		

@@ -25,7 +25,7 @@ public class MathEngine {
 			System.out.println(expression + "=" + engine.eval(expression));
 		}
 		catch(ScriptException se){
-			if (!se.getMessage().equals("empty"))
+			if (!se.getMessage().equals("empty") && !expression.equals("koniec"))
 				System.out.println("Wpisa³eœ niedozwolone dzia³anie lub polecenie!");
 		}
 	}
