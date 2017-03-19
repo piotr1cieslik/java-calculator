@@ -18,7 +18,7 @@ public class Main {
 	 */
 	public static void main(String[] args) throws IOException {
 		//show options to user
-		System.out.println("¯eby otrzymaæ wynik, wpisz dzia³anie. ¯eby obliczyæ wyniki z pliku, wpisz œcie¿kê do pliku. "
+		System.out.println("¯eby otrzymaæ wynik, wpisz dzia³anie. ¯eby obliczyæ wyniki z pliku, wpisz 'plik' a nastêpnie œcie¿kê do pliku. "
 				+ "¯eby zamkn¹æ program, wpisz 'koniec'.");
 		CalculatorManager calculator = new CalculatorManager();
 		
